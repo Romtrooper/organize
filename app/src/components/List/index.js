@@ -9,7 +9,7 @@ import Task from '../Task';
 const List = () => (
   <Grid.Column>
     <Grid>
-      <Grid.Row columns={2}>
+      <Grid.Row columns={1}>
         <Task />
         <Task />
         <Task />

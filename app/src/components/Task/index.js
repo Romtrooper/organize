@@ -1,36 +1,29 @@
-/*
- * Npm import
- */
 import React from 'react';
-import { Button, Card, Grid } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 
 
 const Task = () => (
   <Grid.Column>
-    <Card>
+    <Card fluid color="grey" className="Task">
       <Card.Content>
         <Card.Header>
-            Steve Sanders
+            Task Title
         </Card.Header>
         <Card.Meta>
-            Friends of Elliot
+            Category
         </Card.Meta>
         <Card.Description>
-            Steve wants to add you to the group <strong>best friends</strong>
+            Post haec Gallus Hierapolim profecturus ut expeditioni specie tenus adesset
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <div className="ui two buttons">
-          <Button basic color="green">Approve</Button>
-          <Button basic color="red">Decline</Button>
-        </div>
+        <Icon name="empty star" size="large" />
+        <Icon name="bell outline" size="large" />
+        <Icon name="checkmark" size="large" />
+        <Icon name="trash outline" size="large" />
       </Card.Content>
     </Card>
   </Grid.Column>
 );
 
-
-/*
- * Export default
- */
 export default Task;
