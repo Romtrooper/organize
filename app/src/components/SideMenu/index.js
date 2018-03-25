@@ -2,7 +2,7 @@ import React from 'react';
 import { Sidebar, Menu, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-const SideMenu = () => (
+const SideMenu = ({ visible }) => (
   <div className="SideMenu">
     <Sidebar.Pushable>
       <Sidebar
@@ -10,7 +10,7 @@ const SideMenu = () => (
         animation="push"
         width="thin"
         direction="left"
-        visible={this.props.visible}
+        visible={visible}
         icon="labeled"
         vertical
         inverted
