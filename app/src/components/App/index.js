@@ -4,21 +4,28 @@ import SideMenu from '../SideMenu';
 import Header from '../Header';
 
 class App extends Component {
-state = { load: false };
+  state = { visible: true }
 
-render() {
-  return (
-    <Fragment>
-      <Header />
-      <main>
-        <SideMenu />
-        <div className="App-content">
-          <Routes />
-        </div>
-      </main>
-    </Fragment>
-  );
-}
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+
+  render() {
+    const { visible } = this.state;
+    return (
+      <Fragment>
+        <Header
+          toggleVisibility={this.toggleVisibility}
+        />
+        <main>
+          <SideMenu
+            visible={visible}
+          />
+          <div className="App-content">
+            <Routes />
+          </div>
+        </main>
+      </Fragment>
+    );
+  }
 }
 
 export default App;

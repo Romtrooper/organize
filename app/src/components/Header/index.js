@@ -1,11 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Search } from 'semantic-ui-react';
 
-export default class Header extends Component {
-  state = { activeItem: 'home' }
+const Header = ({ toggleVisibility }) => (
+  <header className="Header">
+    <Button
+      className="Header-button"
+      primary
+      onClick={toggleVisibility}
+      content="Menu"
+    />
+    <Search
+      className="Header-search"
+    />
+  </header>
+);
 
-  render() {
-    return (
-      <header className="Header" />
-    );
-  }
-}
+Header.propTypes = {
+  toggleVisibility: PropTypes.func.isRequired,
+};
+
+export default Header;
