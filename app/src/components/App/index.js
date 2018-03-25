@@ -1,36 +1,24 @@
-import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { Component, Fragment } from 'react';
+import Routes from 'src/routes';
 import SideMenu from '../SideMenu';
 import Header from '../Header';
 
-import FormArea from '../Form';
-import List from '../List';
-
-class App extends React.Component {
+class App extends Component {
 state = { load: false };
 
 render() {
   return (
-    <div>
+    <Fragment>
       <Header />
       <main>
         <SideMenu />
         <div className="App-content">
-          <Grid>
-            <Grid.Row columns={2}>
-              <FormArea />
-              <List />
-            </Grid.Row>
-          </Grid>
+          <Routes />
         </div>
       </main>
-    </div>
+    </Fragment>
   );
 }
 }
 
-
-/*
- * Export default
- */
 export default App;
