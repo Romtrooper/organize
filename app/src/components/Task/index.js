@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Grid, Icon } from 'semantic-ui-react';
 
-
 const Task = () => (
   <Grid.Column>
     <Card fluid color="grey" className="Task">
