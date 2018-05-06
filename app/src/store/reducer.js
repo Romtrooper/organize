@@ -3,7 +3,7 @@ const FORM = {
 };
 
 const initialState = {
-  tasks: {},
+  tasks: [],
 };
 
 export default (state = initialState, action = {}) => {

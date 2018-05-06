@@ -12,7 +12,9 @@
     "jsx-a11y/href-no-hash": "off",
     "react/jsx-filename-extension": "off",
     "react/forbid-prop-types": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/prefer-stateless-function": "off",
+    "no-trailing-spaces": "off"
   },
   "settings": {
     "import/resolver": {
