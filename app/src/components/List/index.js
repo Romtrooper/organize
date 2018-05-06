@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Message } from 'semantic-ui-react';
 import Task from '../Task';
 
 export default class List extends Component {
@@ -18,10 +18,14 @@ export default class List extends Component {
 
     if (Object.keys(tasks).length === 0) {
       return (
-        <Grid.Column>
+        <Grid.Column width={8}>
           <Grid>
             <Grid.Row columns={1}>
-              <div>No datas</div>
+              <Message
+                icon='life ring'
+                header="No tasks found"
+                content='Create a first task to see it appear!'
+              />
             </Grid.Row>
           </Grid>
         </Grid.Column>

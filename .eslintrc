@@ -14,7 +14,8 @@
     "react/forbid-prop-types": "off",
     "react/no-unescaped-entities": "off",
     "react/prefer-stateless-function": "off",
-    "no-trailing-spaces": "off"
+    "no-trailing-spaces": "off",
+    "jsx-quotes": "off"
   },
   "settings": {
     "import/resolver": {
