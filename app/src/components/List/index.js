@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Message } from 'semantic-ui-react';
-import Task from '../Task';
+import Task from '../task';
 
 export default class List extends Component {
   renderTasks = () => this.props.tasks.map(task => (
@@ -18,7 +18,9 @@ export default class List extends Component {
 
     if (Object.keys(tasks).length === 0) {
       return (
-        <Grid.Column width={8}>
+        <Grid.Column
+          width={8}
+        >
           <Grid>
             <Grid.Row columns={1}>
               <Message
@@ -32,7 +34,7 @@ export default class List extends Component {
       );
     }
     return (
-      <Grid.Column>
+      <Grid.Column width={8}>
         <Grid>
           <Grid.Row columns={1}>
             {this.renderTasks()}

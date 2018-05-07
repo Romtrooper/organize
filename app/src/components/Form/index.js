@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Form, Grid, Input, Dropdown } from 'semantic-ui-react';
 
 export default class FormArea extends React.Component {
@@ -14,18 +15,30 @@ export default class FormArea extends React.Component {
       ...this.state,
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   onDropdownChange = (event, data) => {
     this.setState({
       ...this.state,
       category: data.value,
     });
-  }
+  };
+
+  onSubmit =() => {
+    this.props.saveTask(this.state);
+    this.setState({
+      title: '',
+      description: '',
+      url: '',
+      category: '',
+    });
+  };
 
   render() {
     return (
-      <Grid.Column>
+      <Grid.Column
+        width={8}
+      >
         <Form>
           <Form.Field>
             <Input
@@ -76,7 +89,7 @@ export default class FormArea extends React.Component {
           <Form.Field>
             <Button
               type="submit"
-              onClick={() => this.props.saveTask(this.state)}
+              onClick={this.onSubmit}
             >
                 Submit
             </Button>
@@ -86,3 +99,7 @@ export default class FormArea extends React.Component {
     );
   }
 }
+
+FormArea.propTypes = {
+  saveTask: PropTypes.func.isRequired,
+};

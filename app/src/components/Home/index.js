@@ -5,11 +5,11 @@ import FormContainer from '../../containers/FormContainer';
 import TasksContainer from '../../containers/TasksContainer';
 
 const Home = () => (
-  <Grid columns={2}>
-    {/* <Grid.Row> */}
-    <FormContainer />
-    <TasksContainer />
-    {/* </Grid.Row> */}
+  <Grid className='Home-grid' >
+    <Grid.Row streched>
+      <FormContainer />
+      <TasksContainer />
+    </Grid.Row>
   </Grid>
 );
 

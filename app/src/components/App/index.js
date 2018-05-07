@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Routes from 'src/routes';
-import SideMenu from '../SideMenu';
-import Header from '../Header';
+import SideMenu from '../sidemenu';
+import Header from '../header';
 
 class App extends Component {
   state = { visible: true }

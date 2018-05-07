@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Form from '../components/Form';
+import Form from '../components/form';
 import { saveTask } from '../modules/tasks/tasksReducer';
 
 // const mapStateToProps = state => ({

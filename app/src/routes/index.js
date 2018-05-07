@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Dashboard from 'src/components/Dashboard';
-import Reminder from 'src/components/Reminder';
-import Home from 'src/components/Home';
+import Dashboard from 'src/components/dashboard';
+import Reminder from 'src/components/reminder';
+import Home from 'src/components/home';
 
 const Routes = () => (
   <Switch>
