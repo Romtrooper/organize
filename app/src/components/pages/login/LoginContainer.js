@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Login from '../components/login';
-import { createUserAccount } from '../modules/account/accountActions';
+import Login from './Login';
+import { createUserAccount } from '../../../modules/account/accountActions';
 
 
 const mapDispatchToProps = dispatch => ({

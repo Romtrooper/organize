@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import List from '../components/list';
+import Tasks from './Tasks';
 
 const mapStateToProps = state => ({
   tasks: state.tasks.tasksList,
 });
 
-const ListContainer = connect(mapStateToProps, null)(List);
+const ListContainer = connect(mapStateToProps, null)(Tasks);
 export default ListContainer;

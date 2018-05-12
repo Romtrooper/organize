@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Message } from 'semantic-ui-react';
-import Task from '../task';
+import Task from './task/Task';
 
 export default class List extends Component {
   renderTasks = () => this.props.tasks.map(task => (

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { Card, Button, Image } from 'semantic-ui-react';
-import NewsFeed from '../feed';
+import NewsFeed from '../../feed/Feed';
 
 const Dashboard = () => (
   <Fragment>
-    
+
     <Card.Group>
       <Card>
         <Card.Content>

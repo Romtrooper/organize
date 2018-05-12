@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from 'src/components/app';
+import App from 'src/components/app/App';
 import store from 'src/store';
 
 document.addEventListener('DOMContentLoaded', () => {

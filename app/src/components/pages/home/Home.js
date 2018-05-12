@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import FormContainer from '../../containers/FormContainer';
-import TasksContainer from '../../containers/TasksContainer';
+import FormContainer from '../../form/FormContainer';
+import TasksContainer from '../../tasks/TasksContainer';
 
 const Home = () => (
   <Grid className='Home-grid' >

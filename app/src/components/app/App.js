@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import Routes from 'src/routes';
-import SideMenu from '../sidemenu';
-import Header from '../header';
+import Routes from '../../router';
+import SideMenu from '../navigation/sidemenu/SideMenu';
+import Header from '../navigation/header/Header';
 import { firebaseConnect } from '../../modules/account/accountClient';
 
 class App extends Component {
