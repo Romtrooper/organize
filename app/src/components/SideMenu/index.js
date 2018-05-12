@@ -27,10 +27,10 @@ const SideMenu = ({ visible }) => (
                     Dashboards
           </Menu.Item>
         </Link>
-        <Link to="/reminder">
-          <Menu.Item name="sticky note outline">
-            <Icon name="sticky note outline" />
-                Reminder
+        <Link to="/login">
+          <Menu.Item name="lock">
+            <Icon name="lock" />
+                Login
           </Menu.Item>
         </Link>
       </Sidebar>

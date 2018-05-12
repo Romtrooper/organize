@@ -15,7 +15,8 @@
     "react/no-unescaped-entities": "off",
     "react/prefer-stateless-function": "off",
     "no-trailing-spaces": "off",
-    "jsx-quotes": "off"
+    "jsx-quotes": "off",
+    "func-names": "off"
   },
   "settings": {
     "import/resolver": {
