@@ -1,16 +1,16 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import FormContainer from '../../form/FormContainer';
-import TasksContainer from '../../tasks/TasksContainer';
+import Form from '../../form/FormContainer';
+import Lists from '../../lists/ListsContainer';
 
 import './Home.css';
 
 const Home = () => (
 	<Grid className='Home-grid' >
 		<Grid.Row streched>
-			<FormContainer />
-			<TasksContainer />
+			<Form />
+			<Lists />
 		</Grid.Row>
 	</Grid>
 );

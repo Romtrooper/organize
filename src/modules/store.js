@@ -1,9 +1,10 @@
 // import { compose, createStore } from 'redux';
 import { applyMiddleware, compose, createStore } from 'redux';
-import reducers from './reducers';
-import AccountMiddleware from './account/accountMiddleware';
+import thunkMiddleware from 'redux-thunk';
 
-const middlewares = applyMiddleware(AccountMiddleware);
+import reducers from './reducers';
+
+const middlewares = applyMiddleware(thunkMiddleware);
 
 let devTools = [];
 if (window.devToolsExtension) {

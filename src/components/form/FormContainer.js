@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
+import { createList } from '../../modules/lists/ListsActions';
+
 import Form from './Form';
-import { saveTask } from '../../modules/tasks/tasksReducer';
 
-// const mapStateToProps = state => ({
-//   tasks: state.tasks,
-// });
 
-const mapDispatchToProps = dispatch => ({
-  saveTask: (task) => {
-    dispatch(saveTask(task));
-  },
-});
+function mapDispatchToProps(dispatch) {
+	return {
+		saveTask(name) {
+			dispatch(createList(name));
+		},
+	};
+}
 
-const FormContainer = connect(null, mapDispatchToProps)(Form);
-export default FormContainer;
+
+export default connect(null, mapDispatchToProps)(Form);

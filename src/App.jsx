@@ -21,13 +21,9 @@ class App extends Component {
 		const { visible } = this.state;
 		return (
 			<Fragment>
-				<Header
-					toggleVisibility={this.toggleVisibility}
-				/>
+				<Header toggleVisibility={this.toggleVisibility} />
 				<main>
-					<SideMenu
-						visible={visible}
-					/>
+					<SideMenu visible={visible} />
 					<div className='App-content'>
 						<Routes />
 					</div>

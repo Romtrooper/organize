@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import tasks from './tasks/TasksReducer';
+import lists from './lists/ListsReducer';
 import account from './account/AccountReducer';
 
 export default combineReducers({
-	tasks,
+	lists,
 	account,
 });

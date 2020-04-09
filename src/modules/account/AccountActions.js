@@ -1,11 +1,20 @@
-// import { createAccount } from './accountClient';
+import ACCOUNT from './AccountConstants';
+import { createAccount } from './AccountClient';
 
-export const ACCOUNT = {
-	CREATE: 'CREATE_ACCOUNT',
-	CREATE_SUCCES_: 'CREATE_ACCOUNT_SUCCESS',
-	CREATE_ERROR: 'CREATE_ACCOUNT_ERROR',
-};
 
 export function createUserAccount() {
-	return { type: ACCOUNT.CREATE };
+	return (dispatch) => {
+		dispatch({ type: ACCOUNT.CREATE });
+
+		return createAccount()
+			.then(response => {
+
+				dispatch({ type: ACCOUNT.CREATE_SUCCESS });
+				return response;
+
+			})
+			.catch(error => {
+				dispatch({ type: ACCOUNT.CREATE_ERROR });
+			});
+	};
 }

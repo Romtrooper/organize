@@ -1,4 +1,4 @@
-import { ACCOUNT } from './AccountActions';
+import ACCOUNT from './AccountConstants';
 
 const initialState = {
 	account: null,
