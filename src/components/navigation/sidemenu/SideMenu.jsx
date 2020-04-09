@@ -18,21 +18,21 @@ const SideMenu = ({ visible }) => (
 				inverted
 			>
 				<Link to='/'>
-					<Menu.Item name='home'>
-						<Icon name='home' />
-                  Home
+					<Menu.Item name='dashboard'>
+						<Icon name='dashboard' />
+						Dashboard
 					</Menu.Item>
 				</Link>
-				<Link to='/dashboard'>
-					<Menu.Item name='tasks'>
-						<Icon name='tasks' />
-                    Dashboards
+				<Link to='/collections'>
+					<Menu.Item name='collections'>
+						<Icon name='list' />
+						Collections
 					</Menu.Item>
 				</Link>
-				<Link to='/login'>
-					<Menu.Item name='lock'>
-						<Icon name='lock' />
-                Login
+				<Link to='/account'>
+					<Menu.Item name='account'>
+						<Icon name='user outline' />
+						Account
 					</Menu.Item>
 				</Link>
 			</Sidebar>

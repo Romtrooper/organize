@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createList } from '../../modules/lists/ListsActions';
+import { createList } from '../../modules/account/AccountActions';
 
 import Form from './Form';
 

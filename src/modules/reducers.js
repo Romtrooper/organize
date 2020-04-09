@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import lists from './lists/ListsReducer';
+import collections from './collections/CollectionsReducer';
 import account from './account/AccountReducer';
 
 export default combineReducers({
-	lists,
+	collections,
 	account,
 });
