@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form, Grid, Input, Dropdown } from 'semantic-ui-react';
 
-export default class FormArea extends React.Component {
+export default class CollectionItemForm extends React.Component {
 	state = {
 		title: '',
 		description: '',
@@ -100,6 +100,6 @@ export default class FormArea extends React.Component {
 	}
 }
 
-FormArea.propTypes = {
+CollectionItemForm.propTypes = {
 	saveTask: PropTypes.func.isRequired,
 };

@@ -18,12 +18,6 @@ const SideMenu = ({ visible }) => (
 				inverted
 			>
 				<Link to='/'>
-					<Menu.Item name='dashboard'>
-						<Icon name='dashboard' />
-						Dashboard
-					</Menu.Item>
-				</Link>
-				<Link to='/collections'>
 					<Menu.Item name='collections'>
 						<Icon name='list' />
 						Collections

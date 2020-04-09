@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import CollectionForm from '../../form/collection/CollectionFormContainer';
-import Collection from '../../collection/CollectionContainer';
+import CollectionForm from '../form/collection/CollectionFormContainer';
+import Collection from './collection/CollectionContainer';
 
 import './CollectionsScreen.css';
 
