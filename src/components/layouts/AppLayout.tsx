@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 import SideMenu from '../templates/sidemenu/SideMenu';
 import Header from '../templates/header/Header';
 
 import './AppLayout.css';
 
-export default class AppLayout extends React.Component {
+interface IAppLayoutProps {
+	children: React.ReactNode
+}
+
+export default class AppLayout extends React.Component<IAppLayoutProps> {
 	state = {
 		visible: true,
 	}
@@ -16,7 +19,7 @@ export default class AppLayout extends React.Component {
 	render() {
 		const { visible } = this.state;
 		return (
-			<Fragment>
+			<React.Fragment>
 				<Header toggleVisibility={this.toggleVisibility} />
 				<main className='AppLayout'>
 					<SideMenu visible={visible} />
@@ -24,12 +27,8 @@ export default class AppLayout extends React.Component {
 						{this.props.children}
 					</div>
 				</main>
-			</Fragment>
+			</React.Fragment>
 		);
 	}
 }
 
-
-AppLayout.propTypes = {
-	children: PropTypes.node.isRequired,
-};

@@ -4,9 +4,11 @@ const initialState = {
 	list: [],
 };
 
-export default (state = initialState, action = {}) => {
+export default function collections(
+	state = initialState,
+	action: { type: string, payload: any }
+) {
 	switch (action.type) {
-
 	case COLLECTIONS.CREATE:
 		return {
 			...state,

@@ -1,8 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Grid, Input } from 'semantic-ui-react';
+import * as React from 'react';
+import { 
+	Button,
+	Form,
+	Grid,
+	Input
+} from 'semantic-ui-react';
 
-export default class CollectionForm extends React.Component {
+interface ICollectionFormProps {
+	createCollection: (form: Object) => void
+}
+
+export default class CollectionForm extends React.Component<ICollectionFormProps> {
 	state = {
 		title: '',
 	}
@@ -46,7 +54,3 @@ export default class CollectionForm extends React.Component {
 		);
 	}
 }
-
-CollectionForm.propTypes = {
-	createCollection: PropTypes.func.isRequired,
-};

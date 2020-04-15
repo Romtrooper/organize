@@ -14,14 +14,14 @@ module.exports = {
 
 	entry: [
 		// 'react-hot-loader/patch',
-		Path.resolve('./src/index.js'),
+		Path.resolve('./src/index.tsx'),
 	],
 	output: {
 		path: `${__dirname}/dist`,
 		filename: 'bundle.js',
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		modules: [
 			// context,
 			nodeModulesDir,
@@ -35,6 +35,15 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 				},
+			},
+			{
+				test: /\.ts(x?)$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'ts-loader',
+					},
+				],
 			},
 			{
 				test: /\.css$/,
@@ -55,4 +64,8 @@ module.exports = {
 		}),
 	],
 	devtool: 'cheap-module-eval-source-map',
+	// externals: {
+	// 	react: 'React',
+	// 	'react-dom': 'ReactDOM',
+	// },
 };

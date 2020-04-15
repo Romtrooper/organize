@@ -1,16 +1,26 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Grid, Message, Card, Icon } from 'semantic-ui-react';
-// import CollectionItem from './item/CollectionItem';
+import * as React from 'react';
+import { 
+	Grid,
+	Message,
+	Card,
+	Icon,
+	Button
+} from 'semantic-ui-react';
 
-export default class Collection extends Component {
+interface ICollectionProps {
+	collections: Array<any>
+}
+
+export default class Collection extends React.Component<ICollectionProps> {
 	renderTasks = () => this.props.collections.map(collection => (
 		<Card>
 			<Card.Content header={collection.title} />
-			{/* <Card.Content description={description} /> */}
 			<Card.Content extra>
-				<Icon name='user' />
-				4 Friends
+				<Button content='See' positive fluid />
+			</Card.Content>
+			<Card.Content extra>
+				<Icon name='book' />
+				Read 2 of 7
 			</Card.Content>
 		</Card>
 	));
@@ -42,7 +52,3 @@ export default class Collection extends Component {
 		);
 	}
 }
-
-Collection.propTypes = {
-	collections: PropTypes.array.isRequired,
-};

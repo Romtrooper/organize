@@ -1,8 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Grid, Input, Dropdown } from 'semantic-ui-react';
+import * as React from 'react';
+import { 
+	Button,
+	Form,
+	Grid,
+	Input,
+	Dropdown,
+} from 'semantic-ui-react';
 
-export default class CollectionItemForm extends React.Component {
+
+interface ICollectionItemFormProps {
+	saveTask: (task: Object) => void
+}
+
+export default class CollectionItemForm extends React.Component<ICollectionItemFormProps> {
 	state = {
 		title: '',
 		description: '',
@@ -99,7 +109,3 @@ export default class CollectionItemForm extends React.Component {
 		);
 	}
 }
-
-CollectionItemForm.propTypes = {
-	saveTask: PropTypes.func.isRequired,
-};

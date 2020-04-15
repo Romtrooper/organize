@@ -6,7 +6,8 @@ export function firebaseConnect() {
 	// return firebase.initializeApp(config);
 }
 
-export function createAccount(email, password) {
+export function createAccount(email, password): Promise<any> {
 	console.log('login with firebase');
+	return;
 	// firebase.auth().createUserWithEmailAndPassword(email, password);
 }

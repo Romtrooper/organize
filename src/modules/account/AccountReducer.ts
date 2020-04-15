@@ -5,7 +5,10 @@ const initialState = {
 	connected: false,
 };
 
-export default (state = initialState, action = {}) => {
+export default function account(
+	state = initialState,
+	action: { type: string, payload: any }
+) {
 	switch (action.type) {
 	case ACCOUNT.CREATE:
 		return {

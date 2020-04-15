@@ -1,15 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { Button, Search } from 'semantic-ui-react';
 
 import './Header.css';
 
-const Header = ({ toggleVisibility }) => (
+interface IHeaderProps {
+	toggleVisibility: () => void
+}
+
+const Header = (props: IHeaderProps) => (
 	<header className='Header'>
 		<Button
 			className='Header-button'
 			primary
-			onClick={toggleVisibility}
+			onClick={props.toggleVisibility}
 			content='Menu'
 		/>
 		<Search
@@ -17,9 +20,5 @@ const Header = ({ toggleVisibility }) => (
 		/>
 	</header>
 );
-
-Header.propTypes = {
-	toggleVisibility: PropTypes.func.isRequired,
-};
 
 export default Header;

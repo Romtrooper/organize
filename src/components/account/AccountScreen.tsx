@@ -1,8 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Grid, Input } from 'semantic-ui-react';
+import * as React from 'react';
+import {
+	Button,
+	Form,
+	Grid,
+	Input
+} from 'semantic-ui-react';
 
-export default class Login extends React.Component {
+interface ILoginProps {
+	createUserAccount: (mail: string, password: string) => void
+}
+
+export default class Login extends React.Component<ILoginProps> {
 	state = {
 		name: '',
 		mail: '',
@@ -36,9 +44,7 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<Grid.Column
-				width={8}
-			>
+			<Grid.Column width={8}>
 				<Form>
 					<Form.Field>
 						<Input
@@ -93,7 +99,3 @@ export default class Login extends React.Component {
 		);
 	}
 }
-
-Login.propTypes = {
-	createUserAccount: PropTypes.func.isRequired,
-};
