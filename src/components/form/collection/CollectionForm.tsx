@@ -23,7 +23,7 @@ export default class CollectionForm extends React.Component<ICollectionFormProps
 	};
 
 	onSubmit =() => {
-		this.props.createCollection(this.state);
+		this.props.createCollection(this.state.title);
 		this.setState({ title: '' });
 	};
 

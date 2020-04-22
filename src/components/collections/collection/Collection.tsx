@@ -14,7 +14,7 @@ interface ICollectionProps {
 export default class Collection extends React.Component<ICollectionProps> {
 	renderTasks = () => this.props.collections.map(collection => (
 		<Card>
-			<Card.Content header={collection.title} />
+			<Card.Content header={collection} />
 			<Card.Content extra>
 				<Button content='See' positive fluid />
 			</Card.Content>
@@ -26,7 +26,7 @@ export default class Collection extends React.Component<ICollectionProps> {
 	));
 
 	render() {
-		if (Object.keys(this.props.collections).length === 0) {
+		if (this.props.collections.length === 0) {
 			return (
 				<Grid.Column width={8} >
 					<Grid>
