@@ -7,16 +7,23 @@ import {
 	Button
 } from 'semantic-ui-react';
 
-interface ICollectionProps {
+import { Link } from "react-router-dom";
+
+interface ICollectionListProps {
 	collections: Array<any>
 }
 
-export default class Collection extends React.Component<ICollectionProps> {
-	renderTasks = () => this.props.collections.map(collection => (
+export default class CollectionList extends React.Component<
+	ICollectionListProps
+> {
+
+	renderCollections = () => this.props.collections.map(name => (
 		<Card>
-			<Card.Content header={collection} />
+			<Card.Content header={name} />
 			<Card.Content extra>
-				<Button content='See' positive fluid />
+				<Link to={`/collection/${name}`}>
+					<Button content='See' positive fluid />
+				</Link>
 			</Card.Content>
 			<Card.Content extra>
 				<Icon name='book' />
@@ -33,8 +40,8 @@ export default class Collection extends React.Component<ICollectionProps> {
 						<Grid.Row columns={1}>
 							<Message
 								icon='life ring'
-								header='No tasks found'
-								content='Create a first task to see it appear!'
+								header='No collections found'
+								content='Create a first collection to see it appear!'
 							/>
 						</Grid.Row>
 					</Grid>
@@ -45,7 +52,7 @@ export default class Collection extends React.Component<ICollectionProps> {
 			<Grid.Column width={8}>
 				<Grid>
 					<Grid.Row columns={1}>
-						{this.renderTasks()}
+						{this.renderCollections()}
 					</Grid.Row>
 				</Grid>
 			</Grid.Column>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Collection from './Collection';
+import CollectionList from './CollectionList';
 
 
 function mapStateToProps(state) {
@@ -7,4 +7,4 @@ function mapStateToProps(state) {
 		collections: Object.keys(state.collections.list),
 	};
 }
-export default connect(mapStateToProps, null)(Collection);
+export default connect(mapStateToProps, null)(CollectionList);
