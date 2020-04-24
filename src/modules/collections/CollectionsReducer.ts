@@ -26,7 +26,6 @@ export default function collections(
 					[item.title]: item,
 				}
 			}
-			// list: Object.assign(state.list[collectionId], {[item.title]: item }),
 		};
 
 	default:
