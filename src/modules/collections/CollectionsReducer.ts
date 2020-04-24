@@ -15,11 +15,19 @@ export default function collections(
 			list: Object.assign(state.list, action.payload),
 		};
 
-	// case COLLECTIONS.CREATE_ITEM:
-	// 	return {
-	// 		...state,
-	// 		list: [...state.list, action.payload.name],
-	// 	};
+	case COLLECTIONS.CREATE_ITEM:
+		 const { collectionId, item } = action.payload;
+		return {
+			...state,
+			list: {
+				...state.list,
+				[collectionId]: {
+					...state.list[collectionId],
+					[item.title]: item,
+				}
+			}
+			// list: Object.assign(state.list[collectionId], {[item.title]: item }),
+		};
 
 	default:
 		return state;

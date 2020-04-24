@@ -6,7 +6,7 @@ import CollectionList from './list/CollectionListContainer';
 
 import './CollectionsScreen.css';
 
-const Home = () => (
+const CollectionsScreen = () => (
 	<Grid className='Home-grid' >
 		<Grid.Row streched>
 			<CollectionForm />
@@ -15,4 +15,4 @@ const Home = () => (
 	</Grid>
 );
 
-export default Home;
+export default CollectionsScreen;

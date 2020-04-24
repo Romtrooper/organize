@@ -9,7 +9,8 @@ import {
 
 
 interface ICollectionItemFormProps {
-	saveTask: (task: Object) => void
+	createCollectionItem: (id: string, item: Object) => void
+	collectionId: string
 }
 
 export default class CollectionItemForm extends React.Component<ICollectionItemFormProps> {
@@ -35,7 +36,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 	};
 
 	onSubmit =() => {
-		this.props.saveTask(this.state);
+		this.props.createCollectionItem(this.props.collectionId, this.state);
 		this.setState({
 			title: '',
 			description: '',

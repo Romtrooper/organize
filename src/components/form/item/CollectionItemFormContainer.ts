@@ -1,16 +1,16 @@
-// import { connect } from 'react-redux';
-// import { createList } from '../../modules/account/AccountActions';
+import { connect } from 'react-redux';
+import { createCollectionItem } from '../../../modules/collections/CollectionsActions';
 
-// import Form from './Form';
-
-
-// function mapDispatchToProps(dispatch) {
-// 	return {
-// 		saveTask(name) {
-// 			dispatch(createList(name));
-// 		},
-// 	};
-// }
+import CollectionItemForm from './CollectionItemForm';
 
 
-// export default connect(null, mapDispatchToProps)(Form);
+function mapDispatchToProps(dispatch) {
+	return {
+		createCollectionItem(collectionId, item) {
+			dispatch(createCollectionItem(collectionId, item));
+		},
+	};
+}
+
+
+export default connect(null, mapDispatchToProps)(CollectionItemForm);
