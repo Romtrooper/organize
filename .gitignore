@@ -1,5 +1,4 @@
-/public
 /node_modules
-/vendor
-/brunch-config.js
-/app/src/firebase.js
+/dist
+.firebase
+/config/firebase.js
