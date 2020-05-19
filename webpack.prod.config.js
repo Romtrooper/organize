@@ -5,13 +5,13 @@ const nodeModulesDir = Path.resolve('node_modules');
 
 module.exports = {
 	mode: 'production',
-	entry: Path.resolve('./src/index.js'),
+	entry: Path.resolve('./src/index.tsx'),
 	output: {
 		path: `${__dirname}/dist`,
 		filename: 'bundle.js',
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		modules: [
 			// context,
 			nodeModulesDir,
@@ -25,6 +25,15 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 				},
+			},
+			{
+				test: /\.ts(x?)$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'ts-loader',
+					},
+				],
 			},
 			{
 				test: /\.css$/,

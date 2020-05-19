@@ -51,6 +51,7 @@
   "scripts": {
     "build": "webpack --progress --config webpack.prod.config.js",
     "start": "webpack-dev-server --progress --config webpack.dev.config.js",
-    "dev": "npm start"
+    "dev": "npm start",
+    "deploy": "firebase deploy"
   }
 }
