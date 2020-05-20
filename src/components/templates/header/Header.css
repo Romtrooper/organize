@@ -1,6 +1,6 @@
 .Header {
   height: 8vh;
-  background: #1b1c1d;
+  /* background: #1b1c1d; */
   display: flex;
   align-items: center;
   justify-content: space-between;

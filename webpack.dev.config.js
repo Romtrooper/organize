@@ -26,6 +26,9 @@ module.exports = {
 			// context,
 			nodeModulesDir,
 		],
+		alias: {
+			'react-dom': '@hot-loader/react-dom',
+		},
 	},
 	module: {
 		rules: [
