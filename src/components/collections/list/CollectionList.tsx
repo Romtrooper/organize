@@ -48,6 +48,7 @@ export default class CollectionList extends React.Component<
 				</Grid.Column>
 			);
 		}
+		
 		return (
 			<Grid.Column width={8}>
 				<Grid>

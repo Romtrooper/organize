@@ -4,10 +4,8 @@ import { Grid } from 'semantic-ui-react';
 import CollectionForm from '../form/collection/CollectionFormContainer';
 import CollectionList from './list/CollectionListContainer';
 
-import './CollectionsScreen.css';
-
 const CollectionsScreen = () => (
-	<Grid className='Home-grid' >
+	<Grid>
 		<Grid.Row streched>
 			<CollectionForm />
 			<CollectionList />
