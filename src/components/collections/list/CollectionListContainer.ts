@@ -7,4 +7,5 @@ function mapStateToProps(state) {
 		collections: Object.keys(state.collections.list),
 	};
 }
+
 export default connect(mapStateToProps, null)(CollectionList);

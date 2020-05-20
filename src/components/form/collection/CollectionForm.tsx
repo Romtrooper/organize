@@ -42,11 +42,8 @@ export default class CollectionForm extends React.Component<ICollectionFormProps
 						/>
 					</Form.Field>
 					<Form.Field>
-						<Button
-							type='submit'
-							onClick={this.onSubmit}
-						>
-								Submit
+						<Button type='submit' onClick={this.onSubmit}>
+							Submit
 						</Button>
 					</Form.Field>
 				</Form>

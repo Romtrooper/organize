@@ -47,9 +47,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 
 	render() {
 		return (
-			<Grid.Column
-				width={8}
-			>
+			<Grid.Column width={8}>
 				<Form>
 					<Form.Field>
 						<Input
