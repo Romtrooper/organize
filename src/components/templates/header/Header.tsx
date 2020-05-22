@@ -1,23 +1,24 @@
 import * as React from 'react';
-import { Button, Search } from 'semantic-ui-react';
+import { Menu, Search } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import './Header.css';
 
-interface IHeaderProps {
-	toggleVisibility: () => void
-}
-
-const Header = (props: IHeaderProps) => (
+const Header = () => (
 	<header className='Header'>
-		<Button
-			className='Header-button'
-			primary
-			onClick={props.toggleVisibility}
-			content='Menu'
-		/>
-		<Search
-			className='Header-search'
-		/>
+		<Menu pointing secondary>
+			<Link to='/'>
+				<Menu.Item name='collections'>
+					Collections
+				</Menu.Item>
+			</Link>
+			<Link to='/account'>
+				<Menu.Item name='account'>
+					Account
+				</Menu.Item>
+			</Link>
+		</Menu>
+		<Search className='Header-search' />
 	</header>
 );
 

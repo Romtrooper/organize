@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import CollectionsScreen from './components/collections/CollectionsScreen';
-import AccountScreen from './components/account/AccountScreenContainer';
-import CollectionScreen from './components/collection/CollectionScreen';
+import CollectionsScreen from './components/screens/collections/CollectionsScreen';
+import AccountScreen from './components/screens/account/AccountScreenContainer';
+import CollectionScreen from './components/screens/collection/CollectionScreen';
+
 import AppLayout from './components/layouts/AppLayout';
 
 export default function Routes() {
