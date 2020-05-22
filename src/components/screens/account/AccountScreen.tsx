@@ -1,101 +1,62 @@
 import * as React from 'react';
-import {
-	Button,
-	Form,
-	Grid,
-	Input
-} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Divider, Grid, Segment } from 'semantic-ui-react'
 
-interface ILoginProps {
+import LoginForm from '../../form/login/LoginForm';
+import RegisterForm from '../../form/register/RegisterForm';
+
+interface IAccountScreenProps {
 	createUserAccount: (mail: string, password: string) => void
+	onSubmit(): void
+	history: any
+	connected: boolean
+	error: boolean
+	processing: boolean
 }
 
-export default class Login extends React.Component<ILoginProps> {
-	state = {
-		name: '',
-		mail: '',
-		password: '',
-		confirm: '',
-	}
+export default class AccountScreen extends React.Component<IAccountScreenProps> {
 
-	onChange = (event) => {
-		this.setState({
-			...this.state,
-			[event.target.name]: event.target.value,
-		});
-	};
-
-	onDropdownChange = (event, data) => {
-		this.setState({
-			...this.state,
-			category: data.value,
-		});
-	};
-
-	onSubmit = () => {
-		this.props.createUserAccount(this.state.mail, this.state.password);
-		this.setState({
-			name: '',
-			mail: '',
-			password: '',
-			confirm: '',
-		});
-	};
+	// componentDidUpdate(prevProps) {
+	// 	if (!prevProps.connected && this.props.connected) {
+	// 		return this.props.history.push('/');
+	// 	}
+	// }
 
 	render() {
+
+		if (this.props.connected) {
+			return (
+				<Link to='/'>
+					<Button>
+						Explore
+					</Button>
+				</Link>
+			)
+		}
+
 		return (
-			<Grid.Column width={8}>
-				<Form>
-					<Form.Field>
-						<Input
-							name='name'
-							label='Name'
-							labelPosition='left'
-							placeholder='Enter your name'
-							onChange={this.onChange}
-							value={this.state.name}
+			<Segment placeholder>
+				<Grid columns={2} relaxed='very' stackable>
+					<Grid.Column>
+						<LoginForm
+							error={this.props.error}
+							processing={this.props.processing}
+							onSubmit={this.props.onSubmit}
 						/>
-					</Form.Field>
-					<Form.Field>
-						<Input
-							name='mail'
-							label='Mail'
-							labelPosition='left'
-							placeholder='Enter your mail'
-							onChange={this.onChange}
-							value={this.state.mail}
+					</Grid.Column>
+					
+					<Grid.Column>
+						<RegisterForm
+							error={this.props.error}
+							createUserAccount={this.props.createUserAccount}
+							processing={this.props.processing}
 						/>
-					</Form.Field>
-					<Form.Field>
-						<Input
-							name='password'
-							label='Password'
-							labelPosition='left'
-							placeholder='Choose a password'
-							onChange={this.onChange}
-							value={this.state.password}
-						/>
-					</Form.Field>
-					<Form.Field>
-						<Input
-							name='confirm'
-							label='Confirm password'
-							labelPosition='left'
-							placeholder='Confirm the password'
-							onChange={this.onChange}
-							value={this.state.confirm}
-						/>
-					</Form.Field>
-					<Form.Field>
-						<Button
-							type='submit'
-							onClick={this.onSubmit}
-						>
-								Submit
-						</Button>
-					</Form.Field>
-				</Form>
-			</Grid.Column>
-		);
+					</Grid.Column>
+				</Grid>
+			
+				<Divider vertical>Or</Divider>
+			</Segment>
+		)
 	}
+
 }
