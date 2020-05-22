@@ -5,7 +5,7 @@ import {
 	Icon,
 	Button
 } from 'semantic-ui-react';
-import { ICollectionItem } from '../../../modules/collections/CollectionsInterface';
+import { ICollectionItem } from '../../../../modules/collections/CollectionsInterface';
 
 interface ICollectionScreenListProps {
 	itemsList: Array<ICollectionItem>

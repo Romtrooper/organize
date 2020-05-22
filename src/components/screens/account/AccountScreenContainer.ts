@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AccountScreen from './AccountScreen';
-import { createUserAccount } from '../../modules/account/AccountActions';
+import { createUserAccount } from '../../../modules/account/AccountActions';
 
 
 const mapDispatchToProps = dispatch => ({
