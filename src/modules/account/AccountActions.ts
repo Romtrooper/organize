@@ -69,8 +69,6 @@ export function createUserAccount(email, password) {
 		return AccountClient.createAccount(email, password)
 			.then(user => {
 
-				console.log(user);
-
 				dispatch({
 					type: ACCOUNT.CREATE_SUCCESS,
 					payload: { user }

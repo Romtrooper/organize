@@ -13,7 +13,7 @@ export default function account(
 	state: IAccountState = initialState,
 	action: {
 		type: string,
-		payload: Object,
+		payload: { [key: string]: any },
 		error: any,
 	}
 ) {
@@ -33,7 +33,7 @@ export default function account(
 		return {
 			...state,
 			processing: false,
-			account: 'Username',
+			user: action.payload.user,
 			connected: true,
 		};
 
