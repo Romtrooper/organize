@@ -49,7 +49,7 @@ export default function LoginForm({ onSubmit, error, processing }: ILoginFormPro
 
 			<Form.Field>
 				<Button type='submit'>
-					Submit
+					Log In
 				</Button>
 			</Form.Field>
 			<Message

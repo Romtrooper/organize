@@ -67,10 +67,15 @@ export function createUserAccount(email, password) {
 		dispatch({ type: ACCOUNT.CREATE });
 
 		return AccountClient.createAccount(email, password)
-			.then(response => {
+			.then(user => {
 
-				dispatch({ type: ACCOUNT.CREATE_SUCCESS });
-				return response;
+				console.log(user);
+
+				dispatch({
+					type: ACCOUNT.CREATE_SUCCESS,
+					payload: { user }
+				});
+				return user;
 
 			})
 			.catch(error => {
