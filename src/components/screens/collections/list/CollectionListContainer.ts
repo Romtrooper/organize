@@ -3,8 +3,11 @@ import CollectionList from './CollectionList';
 
 
 function mapStateToProps(state) {
+	const collections = Object.keys(state.collections.list);
+
 	return {
-		collections: Object.keys(state.collections.list),
+		collections,
+		empty: collections.length === 0
 	};
 }
 

@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
+    "@romtrooper/lint": "0.0.8",
     "axios": "^0.18.1",
     "firebase": "^7.13.2",
     "prop-types": "^15.6.0",
@@ -53,6 +54,7 @@
     "build": "webpack --progress --config webpack.prod.config.js",
     "start": "webpack-dev-server --progress --config webpack.dev.config.js",
     "dev": "npm start",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   }
 }

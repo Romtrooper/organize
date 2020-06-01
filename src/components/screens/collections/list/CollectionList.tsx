@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 interface ICollectionListProps {
 	collections: Array<any>
+	empty: boolean
 }
 
 export default class CollectionList extends React.Component<
@@ -32,28 +33,24 @@ export default class CollectionList extends React.Component<
 		</Card>
 	));
 
+	renderEmpty(){
+		return (
+			<Message
+				icon='life ring'
+				header='No collections found'
+				content='Create a first collection to see it appear!'
+			/>
+		)
+	}
+
 	render() {
-		if (this.props.collections.length === 0) {
-			return (
-				<Grid.Column width={8} >
-					<Grid>
-						<Grid.Row columns={1}>
-							<Message
-								icon='life ring'
-								header='No collections found'
-								content='Create a first collection to see it appear!'
-							/>
-						</Grid.Row>
-					</Grid>
-				</Grid.Column>
-			);
-		}
-		
+		const { empty } = this.props;
+	
 		return (
 			<Grid.Column width={8}>
 				<Grid>
 					<Grid.Row columns={1}>
-						{this.renderCollections()}
+						{empty ? this.renderEmpty() : this.renderCollections()}
 					</Grid.Row>
 				</Grid>
 			</Grid.Column>
