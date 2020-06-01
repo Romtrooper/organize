@@ -13,10 +13,8 @@ interface IRegisterProps {
 
 export default class Register extends React.Component<IRegisterProps> {
 	state = {
-		name: '',
 		mail: '',
 		password: '',
-		confirm: '',
 	}
 
 	onChange = (event) => {
@@ -29,26 +27,14 @@ export default class Register extends React.Component<IRegisterProps> {
 	onSubmit = () => {
 		this.props.createUserAccount(this.state.mail, this.state.password);
 		this.setState({
-			name: '',
 			mail: '',
 			password: '',
-			confirm: '',
 		});
 	};
 
 	render() {
 		return (
 			<Form onSubmit={this.onSubmit}>
-				<Form.Field>
-					<Input
-						name='name'
-						label='Name'
-						labelPosition='left'
-						placeholder='Enter your name'
-						onChange={this.onChange}
-						value={this.state.name}
-					/>
-				</Form.Field>
 				<Form.Field>
 					<Input
 						name='mail'
@@ -70,18 +56,8 @@ export default class Register extends React.Component<IRegisterProps> {
 					/>
 				</Form.Field>
 				<Form.Field>
-					<Input
-						name='confirm'
-						label='Confirm password'
-						labelPosition='left'
-						placeholder='Confirm the password'
-						onChange={this.onChange}
-						value={this.state.confirm}
-					/>
-				</Form.Field>
-				<Form.Field>
 					<Button type='submit'>
-							Submit
+						Sign Up
 					</Button>
 				</Form.Field>
 			</Form>
