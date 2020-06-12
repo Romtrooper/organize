@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { 
+import {
 	Button,
 	Message,
 	Form,
@@ -9,9 +9,9 @@ import {
 } from 'semantic-ui-react'
 
 interface ILoginFormProps {
-	onSubmit: (name: string, password: string) => void
-	error: boolean
-	processing: boolean
+	onSubmit: (name: string, password: string) => void;
+	error: boolean;
+	processing: boolean;
 }
 
 export default function LoginForm({ onSubmit, error, processing }: ILoginFormProps) {
@@ -19,7 +19,7 @@ export default function LoginForm({ onSubmit, error, processing }: ILoginFormPro
 	const [password, setPassword] = useState('');
 
 	return (
-		<Form 
+		<Form
 			loading={processing}
 			success={false}
 			error={error}

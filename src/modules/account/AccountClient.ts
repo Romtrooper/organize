@@ -27,8 +27,7 @@ export function checkCredentials() {
 		firebaseClient.auth().onAuthStateChanged(user => {
 			if (user) {
 				resolve('firebase');
-			}
-			else {
+			} else {
 				reject(Error('not connected'));
 			}
 		});

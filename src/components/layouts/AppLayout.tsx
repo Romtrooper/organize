@@ -4,18 +4,15 @@ import Header from '../templates/header/Header';
 
 import './AppLayout.css'
 interface IAppLayoutProps {
-	children: React.ReactNode
+	children: React.ReactNode;
 }
 
-export default class AppLayout extends React.Component<IAppLayoutProps> {
-
-	render() {
-		return (
-			<main className='AppLayout'>
-				<Header />
-				{this.props.children}
-			</main>
-		);
-	}
+export default function AppLayout({ children }: IAppLayoutProps) {
+	return (
+		<main className='AppLayout'>
+			<Header />
+			{children}
+		</main>
+	);
 }
 

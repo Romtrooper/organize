@@ -3,13 +3,21 @@ import { Grid } from 'semantic-ui-react';
 import CollectionItemForm from '../../form/item/CollectionItemFormContainer';
 import CollectionScreenListContainer from './list/CollectionScreenListContainer';
 
-export default function Collection(props) {
-	 return (
+interface ICollectionProps {
+	match: {
+		params: {
+			name: string;
+		};
+	};
+}
+
+export default function Collection({ match }: ICollectionProps) {
+	return (
 		<Grid>
 			<Grid.Row streched>
-				<CollectionItemForm collectionId={props.match.params.name} />
-				<CollectionScreenListContainer collectionId={props.match.params.name} />
+				<CollectionItemForm collectionId={match.params.name} />
+				<CollectionScreenListContainer collectionId={match.params.name} />
 			</Grid.Row>
 		</Grid>
-	 )
+	)
 }

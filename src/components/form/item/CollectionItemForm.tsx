@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { 
+import {
 	Button,
 	Form,
 	Grid,
@@ -9,8 +9,8 @@ import {
 
 
 interface ICollectionItemFormProps {
-	createCollectionItem: (id: string, item: Object) => void
-	collectionId: string
+	createCollectionItem: (id: string, item: Object) => void;
+	collectionId: string;
 }
 
 export default class CollectionItemForm extends React.Component<ICollectionItemFormProps> {
@@ -21,22 +21,24 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 		category: '',
 	}
 
-	onChange = (event) => {
+	handleChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	onDropdownChange = (event, data) => {
+	handleDropdownChange = (event, data) => {
 		this.setState({
 			...this.state,
 			category: data.value,
 		});
 	};
 
-	onSubmit =() => {
-		this.props.createCollectionItem(this.props.collectionId, this.state);
+	handleSubmit =() => {
+		const { createCollectionItem, collectionId } = this.props;
+
+		createCollectionItem(collectionId, this.state);
 		this.setState({
 			title: '',
 			description: '',
@@ -46,6 +48,12 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 	};
 
 	render() {
+		const {
+			title,
+			url,
+			description,
+		} = this.state;
+
 		return (
 			<Grid.Column width={8}>
 				<Form>
@@ -55,8 +63,8 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Title'
 							labelPosition='left'
 							placeholder='Name your task'
-							onChange={this.onChange}
-							value={this.state.title}
+							onChange={this.handleChange}
+							value={title}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -65,8 +73,8 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Description'
 							labelPosition='left'
 							placeholder='Description of the task'
-							onChange={this.onChange}
-							value={this.state.description}
+							onChange={this.handleChange}
+							value={description}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -75,8 +83,8 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Url'
 							labelPosition='left'
 							placeholder='Link a website'
-							onChange={this.onChange}
-							value={this.state.url}
+							onChange={this.handleChange}
+							value={url}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -87,7 +95,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							search
 							floating
 							labeled
-							onChange={this.onDropdownChange}
+							onChange={this.handleDropdownChange}
 							options={[
 								{ key: 'Todo', text: 'To do', value: 'To do' },
 								{ key: 'Toread', text: 'To read', value: 'To read' },
@@ -96,11 +104,8 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 						/>
 					</Form.Field>
 					<Form.Field>
-						<Button
-							type='submit'
-							onClick={this.onSubmit}
-						>
-								Submit
+						<Button type='submit' onClick={this.handleSubmit}>
+							Submit
 						</Button>
 					</Form.Field>
 				</Form>

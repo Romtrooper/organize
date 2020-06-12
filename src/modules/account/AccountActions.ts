@@ -4,7 +4,7 @@ import * as AccountClient from './AccountClient';
 
 
 export function login(username: string, password: string) {
-	return (dispatch) => {
+	return dispatch => {
 
 		dispatch({ type: ACCOUNT.LOGIN });
 
@@ -26,7 +26,7 @@ export function login(username: string, password: string) {
 }
 
 export function logout() {
-	return (dispatch) => {
+	return dispatch => {
 
 		dispatch({ type: ACCOUNT.LOGOUT });
 
@@ -46,7 +46,7 @@ export function logout() {
 
 
 export function checkAppCredentials() {
-	return (dispatch) => {
+	return dispatch => {
 		dispatch({ type: ACCOUNT.LOGIN });
 
 		return AccountClient.checkCredentials()
@@ -63,7 +63,7 @@ export function checkAppCredentials() {
 }
 
 export function createUserAccount(email, password) {
-	return (dispatch) => {
+	return dispatch => {
 		dispatch({ type: ACCOUNT.CREATE });
 
 		return AccountClient.createAccount(email, password)

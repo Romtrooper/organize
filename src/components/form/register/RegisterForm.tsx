@@ -6,9 +6,9 @@ import {
 } from 'semantic-ui-react';
 
 interface IRegisterProps {
-	createUserAccount: (mail: string, password: string) => void
-	error: boolean
-	processing: boolean
+	createUserAccount: (mail: string, password: string) => void;
+	error: boolean;
+	processing: boolean;
 }
 
 export default class Register extends React.Component<IRegisterProps> {
@@ -17,15 +17,18 @@ export default class Register extends React.Component<IRegisterProps> {
 		password: '',
 	}
 
-	onChange = (event) => {
+	handleChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	onSubmit = () => {
-		this.props.createUserAccount(this.state.mail, this.state.password);
+	handleSubmit = () => {
+		const { mail, password } = this.state;
+		const { createUserAccount } = this.props;
+
+		createUserAccount(mail, password);
 		this.setState({
 			mail: '',
 			password: '',
@@ -33,16 +36,18 @@ export default class Register extends React.Component<IRegisterProps> {
 	};
 
 	render() {
+		const { mail, password } = this.state;
+
 		return (
-			<Form onSubmit={this.onSubmit}>
+			<Form onSubmit={this.handleSubmit}>
 				<Form.Field>
 					<Input
 						name='mail'
 						label='Mail'
 						labelPosition='left'
 						placeholder='Enter your mail'
-						onChange={this.onChange}
-						value={this.state.mail}
+						onChange={this.handleChange}
+						value={mail}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -51,8 +56,8 @@ export default class Register extends React.Component<IRegisterProps> {
 						label='Password'
 						labelPosition='left'
 						placeholder='Choose a password'
-						onChange={this.onChange}
-						value={this.state.password}
+						onChange={this.handleChange}
+						value={password}
 					/>
 				</Form.Field>
 				<Form.Field>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { 
+import {
 	Grid,
 	Message,
 	Card,
@@ -7,31 +7,37 @@ import {
 	Button
 } from 'semantic-ui-react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface ICollectionListProps {
-	collections: Array<any>
-	empty: boolean
+	collections: Array<any>;
+	empty: boolean;
 }
 
-export default class CollectionList extends React.Component<
-	ICollectionListProps
-> {
+export default class CollectionList extends React.Component<ICollectionListProps> {
 
-	renderCollections = () => this.props.collections.map(name => (
-		<Card>
-			<Card.Content header={name} />
-			<Card.Content extra>
-				<Link to={`/collection/${name}`}>
-					<Button content='See' positive fluid />
-				</Link>
-			</Card.Content>
-			<Card.Content extra>
-				<Icon name='book' />
-				Read 2 of 7
-			</Card.Content>
-		</Card>
-	));
+	renderCollections = () => {
+		const { collections } = this.props;
+
+		return collections.map(name => (
+			<Card key={name}>
+				<Card.Content header={name} />
+				<Card.Content extra>
+					<Link to={`/collection/${name}`}>
+						<Button
+							content='See'
+							positive
+							fluid
+						/>
+					</Link>
+				</Card.Content>
+				<Card.Content extra>
+					<Icon name='book' />
+					Read 2 of 7
+				</Card.Content>
+			</Card>
+		));
+	}
 
 	renderEmpty(){
 		return (
@@ -45,7 +51,7 @@ export default class CollectionList extends React.Component<
 
 	render() {
 		const { empty } = this.props;
-	
+
 		return (
 			<Grid.Column width={8}>
 				<Grid>

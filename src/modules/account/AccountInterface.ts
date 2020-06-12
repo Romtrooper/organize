@@ -1,6 +1,6 @@
 export interface IAccountState {
-	user: string,
-	connected: boolean
-	error: boolean
-	processing: boolean
+	user: string;
+	connected: boolean;
+	error: boolean;
+	processing: boolean;
 }

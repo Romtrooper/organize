@@ -4,10 +4,11 @@ import CollectionList from './CollectionList';
 
 function mapStateToProps(state) {
 	const collections = Object.keys(state.collections.list);
+	const arrFirstIndex = 0;
 
 	return {
 		collections,
-		empty: collections.length === 0
+		empty: collections.length === arrFirstIndex
 	};
 }
 
