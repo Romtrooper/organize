@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { 
+import {
 	Button,
 	Form,
 	Grid,
@@ -7,7 +7,7 @@ import {
 } from 'semantic-ui-react';
 
 interface ICollectionFormProps {
-	createCollection: (form: Object) => void
+	createCollection: (form: string) => void;
 }
 
 export default class CollectionForm extends React.Component<ICollectionFormProps> {
@@ -15,19 +15,24 @@ export default class CollectionForm extends React.Component<ICollectionFormProps
 		title: '',
 	}
 
-	onChange = (event) => {
+	handleChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	onSubmit =() => {
-		this.props.createCollection(this.state.title);
+	handleSumit = () => {
+		const { title } = this.state;
+		const { createCollection } = this.props;
+
+		createCollection(title);
 		this.setState({ title: '' });
 	};
 
 	render() {
+		const { title } = this.state;
+
 		return (
 			<Grid.Column width={8}>
 				<Form>
@@ -37,12 +42,12 @@ export default class CollectionForm extends React.Component<ICollectionFormProps
 							label='Title'
 							labelPosition='left'
 							placeholder='Name your task'
-							onChange={this.onChange}
-							value={this.state.title}
+							onChange={this.handleChange}
+							value={title}
 						/>
 					</Form.Field>
 					<Form.Field>
-						<Button type='submit' onClick={this.onSubmit}>
+						<Button type='submit' onClick={this.handleSumit}>
 							Submit
 						</Button>
 					</Form.Field>

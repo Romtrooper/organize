@@ -19,15 +19,18 @@ export default class Register extends React.Component<IRegisterProps> {
 		confirm: '',
 	}
 
-	onChange = event => {
+	handleChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	onSubmit = () => {
-		this.props.createUserAccount(this.state.mail, this.state.password);
+	handleSubmit = () => {
+		const { mail, password } = this.state;
+		const { createUserAccount } = this.props;
+
+		createUserAccount(mail, password);
 		this.setState({
 			name: '',
 			mail: '',
@@ -37,16 +40,23 @@ export default class Register extends React.Component<IRegisterProps> {
 	};
 
 	render() {
+		const {
+			name,
+			mail,
+			password,
+			confirm,
+		} = this.state;
+
 		return (
-			<Form onSubmit={this.onSubmit}>
+			<Form onSubmit={this.handleSubmit}>
 				<Form.Field>
 					<Input
 						name='name'
 						label='Name'
 						labelPosition='left'
 						placeholder='Enter your name'
-						onChange={this.onChange}
-						value={this.state.name}
+						onChange={this.handleChange}
+						value={name}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -55,8 +65,8 @@ export default class Register extends React.Component<IRegisterProps> {
 						label='Mail'
 						labelPosition='left'
 						placeholder='Enter your mail'
-						onChange={this.onChange}
-						value={this.state.mail}
+						onChange={this.handleChange}
+						value={mail}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -65,8 +75,8 @@ export default class Register extends React.Component<IRegisterProps> {
 						label='Password'
 						labelPosition='left'
 						placeholder='Choose a password'
-						onChange={this.onChange}
-						value={this.state.password}
+						onChange={this.handleChange}
+						value={password}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -75,13 +85,13 @@ export default class Register extends React.Component<IRegisterProps> {
 						label='Confirm password'
 						labelPosition='left'
 						placeholder='Confirm the password'
-						onChange={this.onChange}
-						value={this.state.confirm}
+						onChange={this.handleChange}
+						value={confirm}
 					/>
 				</Form.Field>
 				<Form.Field>
 					<Button type='submit'>
-							Submit
+						Submit
 					</Button>
 				</Form.Field>
 			</Form>

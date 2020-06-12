@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { 
+import {
 	Button,
 	Form,
 	Grid,
@@ -9,8 +9,8 @@ import {
 
 
 interface ICollectionItemFormProps {
-	createCollectionItem: (id: string, item: Object) => void
-	collectionId: string
+	createCollectionItem: (id: string, item: Object) => void;
+	collectionId: string;
 }
 
 export default class CollectionItemForm extends React.Component<ICollectionItemFormProps> {
@@ -36,7 +36,9 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 	};
 
 	handleSubmit =() => {
-		this.props.createCollectionItem(this.props.collectionId, this.state);
+		const { createCollectionItem, collectionId } = this.props;
+
+		createCollectionItem(collectionId, this.state);
 		this.setState({
 			title: '',
 			description: '',
@@ -46,6 +48,12 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 	};
 
 	render() {
+		const {
+			title,
+			url,
+			description,
+		} = this.state;
+
 		return (
 			<Grid.Column width={8}>
 				<Form>
@@ -56,7 +64,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							labelPosition='left'
 							placeholder='Name your task'
 							onChange={this.handleChange}
-							value={this.state.title}
+							value={title}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -66,7 +74,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							labelPosition='left'
 							placeholder='Description of the task'
 							onChange={this.handleChange}
-							value={this.state.description}
+							value={description}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -76,7 +84,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							labelPosition='left'
 							placeholder='Link a website'
 							onChange={this.handleChange}
-							value={this.state.url}
+							value={url}
 						/>
 					</Form.Field>
 					<Form.Field>
@@ -96,10 +104,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 						/>
 					</Form.Field>
 					<Form.Field>
-						<Button
-							type='submit'
-							onClick={this.handleSubmit}
-						>
+						<Button type='submit' onClick={this.handleSubmit}>
 							Submit
 						</Button>
 					</Form.Field>

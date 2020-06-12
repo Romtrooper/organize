@@ -34,8 +34,8 @@ export function checkCredentials() {
 	});
 }
 
-export function createAccount(/*email, password*/): Promise<void> {
-	console.log('login with firebase');
+export function createAccount(email, password): Promise<void> {
+	console.log('login with firebase', email, password);
 	return;
 	// firebase.auth().createUserWithEmailAndPassword(email, password);
 }

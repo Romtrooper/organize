@@ -19,7 +19,7 @@ export default function LoginForm({ onSubmit, error, processing }: ILoginFormPro
 	const [password, setPassword] = useState('');
 
 	return (
-		<Form 
+		<Form
 			loading={processing}
 			success={false}
 			error={error}

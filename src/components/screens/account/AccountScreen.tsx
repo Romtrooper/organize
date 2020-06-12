@@ -16,11 +16,11 @@ interface IAccountScreenProps {
 
 export default class AccountScreen extends React.Component<IAccountScreenProps> {
 
-	// componentDidUpdate(prevProps) {
-	// 	if (!prevProps.connected && this.props.connected) {
-	// 		return this.props.history.push('/');
-	// 	}
-	// }
+	componentDidUpdate() {
+		// if (!prevProps.connected && this.props.connected) {
+		// 	return this.props.history.push('/');
+		// }
+	}
 
 	render() {
 
@@ -34,27 +34,36 @@ export default class AccountScreen extends React.Component<IAccountScreenProps> 
 			)
 		}
 
+		const {
+			error,
+			processing,
+			onSubmit,
+			createUserAccount,
+		} = this.props;
+
 		return (
 			<Segment placeholder>
 				<Grid columns={2} relaxed='very' stackable>
 					<Grid.Column>
 						<LoginForm
-							error={this.props.error}
-							processing={this.props.processing}
-							onSubmit={this.props.onSubmit}
+							error={error}
+							processing={processing}
+							onSubmit={onSubmit}
 						/>
 					</Grid.Column>
 
 					<Grid.Column>
 						<RegisterForm
-							error={this.props.error}
-							createUserAccount={this.props.createUserAccount}
-							processing={this.props.processing}
+							error={error}
+							createUserAccount={createUserAccount}
+							processing={processing}
 						/>
 					</Grid.Column>
 				</Grid>
 
-				<Divider vertical>Or</Divider>
+				<Divider vertical>
+					Or
+				</Divider>
 			</Segment>
 		)
 	}
