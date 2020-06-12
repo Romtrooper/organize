@@ -27,15 +27,14 @@ export function checkCredentials() {
 		firebaseClient.auth().onAuthStateChanged(user => {
 			if (user) {
 				resolve('firebase');
-			}
-			else {
+			} else {
 				reject(Error('not connected'));
 			}
 		});
 	});
 }
 
-export function createAccount(email, password): Promise<any> {
+export function createAccount(/*email, password*/): Promise<void> {
 	console.log('login with firebase');
 	return;
 	// firebase.auth().createUserWithEmailAndPassword(email, password);

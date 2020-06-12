@@ -11,8 +11,16 @@ export default function Routes() {
 	return (
 		<AppLayout>
 			<Switch>
-				<Route exact path='/' component={CollectionsScreen} />
-				<Route exact path='/account' component={AccountScreen} />
+				<Route
+					exact
+					path='/'
+					component={CollectionsScreen}
+				/>
+				<Route
+					exact
+					path='/account'
+					component={AccountScreen}
+				/>
 				<Route path='/collection/:name' component={CollectionScreen} />
 			</Switch>
 		</AppLayout>

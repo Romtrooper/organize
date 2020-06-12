@@ -6,12 +6,12 @@ import LoginForm from '../../form/login/LoginForm';
 import RegisterForm from '../../form/register/RegisterForm';
 
 interface IAccountScreenProps {
-	createUserAccount: (mail: string, password: string) => void
-	onSubmit(): void
-	history: any
-	connected: boolean
-	error: boolean
-	processing: boolean
+	createUserAccount: (mail: string, password: string) => void;
+	onSubmit(): void;
+	history: any;
+	connected: boolean;
+	error: boolean;
+	processing: boolean;
 }
 
 export default class AccountScreen extends React.Component<IAccountScreenProps> {
@@ -44,7 +44,7 @@ export default class AccountScreen extends React.Component<IAccountScreenProps> 
 							onSubmit={this.props.onSubmit}
 						/>
 					</Grid.Column>
-					
+
 					<Grid.Column>
 						<RegisterForm
 							error={this.props.error}
@@ -53,7 +53,7 @@ export default class AccountScreen extends React.Component<IAccountScreenProps> 
 						/>
 					</Grid.Column>
 				</Grid>
-			
+
 				<Divider vertical>Or</Divider>
 			</Segment>
 		)

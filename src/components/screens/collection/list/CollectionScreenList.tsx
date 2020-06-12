@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { 
+import {
 	Grid,
 	Card,
 	Icon,
@@ -8,8 +8,8 @@ import {
 import { ICollectionItem } from '../../../../modules/collections/CollectionsInterface';
 
 interface ICollectionScreenListProps {
-	itemsList: Array<ICollectionItem>
-	collectionId: string
+	itemsList: Array<ICollectionItem>;
+	collectionId: string;
 }
 
 export default class CollectionScreenList extends React.Component<

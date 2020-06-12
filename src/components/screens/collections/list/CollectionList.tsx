@@ -7,11 +7,11 @@ import {
 	Button
 } from 'semantic-ui-react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface ICollectionListProps {
-	collections: Array<any>
-	empty: boolean
+	collections: Array<any>;
+	empty: boolean;
 }
 
 export default class CollectionList extends React.Component<

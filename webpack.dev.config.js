@@ -1,3 +1,5 @@
+/* global module require */
+
 const Path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 

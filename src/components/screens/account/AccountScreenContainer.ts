@@ -4,7 +4,7 @@ import { createUserAccount, login } from '../../../modules/account/AccountAction
 import AccountScreen from './AccountScreen';
 
 function mapStateToProps(state) {
-	const { 
+	const {
 		connected,
 		error,
 		processing,

@@ -21,21 +21,21 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 		category: '',
 	}
 
-	onChange = (event) => {
+	handleChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	onDropdownChange = (event, data) => {
+	handleDropdownChange = (event, data) => {
 		this.setState({
 			...this.state,
 			category: data.value,
 		});
 	};
 
-	onSubmit =() => {
+	handleSubmit =() => {
 		this.props.createCollectionItem(this.props.collectionId, this.state);
 		this.setState({
 			title: '',
@@ -55,7 +55,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Title'
 							labelPosition='left'
 							placeholder='Name your task'
-							onChange={this.onChange}
+							onChange={this.handleChange}
 							value={this.state.title}
 						/>
 					</Form.Field>
@@ -65,7 +65,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Description'
 							labelPosition='left'
 							placeholder='Description of the task'
-							onChange={this.onChange}
+							onChange={this.handleChange}
 							value={this.state.description}
 						/>
 					</Form.Field>
@@ -75,7 +75,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							label='Url'
 							labelPosition='left'
 							placeholder='Link a website'
-							onChange={this.onChange}
+							onChange={this.handleChange}
 							value={this.state.url}
 						/>
 					</Form.Field>
@@ -87,7 +87,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							search
 							floating
 							labeled
-							onChange={this.onDropdownChange}
+							onChange={this.handleDropdownChange}
 							options={[
 								{ key: 'Todo', text: 'To do', value: 'To do' },
 								{ key: 'Toread', text: 'To read', value: 'To read' },
@@ -98,9 +98,9 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 					<Form.Field>
 						<Button
 							type='submit'
-							onClick={this.onSubmit}
+							onClick={this.handleSubmit}
 						>
-								Submit
+							Submit
 						</Button>
 					</Form.Field>
 				</Form>

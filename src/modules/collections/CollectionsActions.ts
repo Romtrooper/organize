@@ -2,7 +2,7 @@ import COLLECTIONS from './CollectionsConstants';
 
 
 export function createCollection(name: string) {
-	return (dispatch) => {
+	return dispatch => {
 		dispatch({
 			type: COLLECTIONS.CREATE,
 			payload: { [name]: {} },
@@ -11,10 +11,10 @@ export function createCollection(name: string) {
 }
 
 export function createCollectionItem(collectionId: string, item: Object) {
-	return (dispatch) => {
+	return dispatch => {
 		dispatch({
 			type: COLLECTIONS.CREATE_ITEM,
-			payload: { 
+			payload: {
 				collectionId,
 				item,
 			},

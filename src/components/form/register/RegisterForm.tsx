@@ -6,9 +6,9 @@ import {
 } from 'semantic-ui-react';
 
 interface IRegisterProps {
-	createUserAccount: (mail: string, password: string) => void
-	error: boolean
-	processing: boolean
+	createUserAccount: (mail: string, password: string) => void;
+	error: boolean;
+	processing: boolean;
 }
 
 export default class Register extends React.Component<IRegisterProps> {
@@ -19,7 +19,7 @@ export default class Register extends React.Component<IRegisterProps> {
 		confirm: '',
 	}
 
-	onChange = (event) => {
+	onChange = event => {
 		this.setState({
 			...this.state,
 			[event.target.name]: event.target.value,
