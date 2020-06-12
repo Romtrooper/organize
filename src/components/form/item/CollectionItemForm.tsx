@@ -62,7 +62,7 @@ export default class CollectionItemForm extends React.Component<ICollectionItemF
 							name='title'
 							label='Title'
 							labelPosition='left'
-							placeholder='Name your task'
+							placeholder='Name your link'
 							onChange={this.handleChange}
 							value={title}
 						/>

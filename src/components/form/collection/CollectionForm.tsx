@@ -41,7 +41,7 @@ export default class CollectionForm extends React.Component<ICollectionFormProps
 							name='title'
 							label='Title'
 							labelPosition='left'
-							placeholder='Name your task'
+							placeholder='Name your collection'
 							onChange={this.handleChange}
 							value={title}
 						/>

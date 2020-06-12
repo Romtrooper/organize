@@ -9,6 +9,7 @@ import {
 
 import { Link } from 'react-router-dom';
 
+import './CollectionList.css'
 interface ICollectionListProps {
 	collections: Array<any>;
 	empty: boolean;
@@ -20,22 +21,24 @@ export default class CollectionList extends React.Component<ICollectionListProps
 		const { collections } = this.props;
 
 		return collections.map(name => (
-			<Card key={name}>
-				<Card.Content header={name} />
-				<Card.Content extra>
-					<Link to={`/collection/${name}`}>
-						<Button
-							content='See'
-							positive
-							fluid
-						/>
-					</Link>
-				</Card.Content>
-				<Card.Content extra>
-					<Icon name='book' />
-					Read 2 of 7
-				</Card.Content>
-			</Card>
+			<div className='CollectionList-card' key={name}>
+				<Card>
+					<Card.Content header={name} />
+					<Card.Content extra>
+						<Link to={`/collection/${name}`}>
+							<Button
+								content='See'
+								positive
+								fluid
+							/>
+						</Link>
+					</Card.Content>
+					<Card.Content extra>
+						<Icon name='book' />
+						Read 2 of 7
+					</Card.Content>
+				</Card>
+			</div>
 		));
 	}
 

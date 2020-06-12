@@ -7,6 +7,7 @@ import {
 } from 'semantic-ui-react';
 import { ICollectionItem } from '../../../../modules/collections/CollectionsInterface';
 
+import './CollectionScreenList.css'
 interface ICollectionScreenListProps {
 	itemsList: Array<ICollectionItem>;
 	collectionId: string;
@@ -18,27 +19,29 @@ export default class CollectionScreenList extends React.Component<ICollectionScr
 		const { itemsList } = this.props;
 
 		return itemsList.map(item => (
-			<Card key={item.url}>
-				<Card.Content header={item.title} />
-				<Card.Meta>{item.url}</Card.Meta>
-				<Card.Description>
-					{item.description}
-				</Card.Description>
-				<Card.Content extra>
-					<div className='ui two buttons'>
-						<Button basic color='green'>
-							Approve
-						</Button>
-						<Button basic color='red'>
-							Decline
-						</Button>
-					</div>
-				</Card.Content>
-				<Card.Content extra>
-					<Icon name='tags' />
-					{item.category}
-				</Card.Content>
-			</Card>
+			<div className='CollectionList-card' key={item.url}>
+				<Card >
+					<Card.Content header={item.title} />
+					<Card.Meta>{item.url}</Card.Meta>
+					<Card.Description>
+						{item.description}
+					</Card.Description>
+					<Card.Content extra>
+						<div className='ui two buttons'>
+							<Button basic color='green'>
+								Approve
+							</Button>
+							<Button basic color='red'>
+								Decline
+							</Button>
+						</div>
+					</Card.Content>
+					<Card.Content extra>
+						<Icon name='tags' />
+						{item.category}
+					</Card.Content>
+				</Card>
+			</div>
 		));
 	}
 
